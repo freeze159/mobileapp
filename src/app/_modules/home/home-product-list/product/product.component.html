@@ -1,0 +1,13 @@
+<div class="card">
+    <h5 class="card-title pt-3 pl-3">{{product.name}}</h5>
+    <img class="card-img-top" src='https://fsoft-app.herokuapp.com/{{product.image}}' width="245.5" height="245.5" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text price"><small class="text-muted">{{product.unitPrice}} USD</small></p>
+        <p class="card-text unit"><small class="text-muted">{{product.unitInStock}} in stock</small></p>
+        <div class="text-white d-flex action">
+            <a class="btn btn-info" routerLink='product-detail/{{product._id}}'><i class="fa fa-info-circle" ></i> Details</a>
+            <a class="btn btn-warning" routerLink="cart"><i class="fa fa-shopping-cart"></i> Order now</a>
+        </div>
+    </div>
+</div>

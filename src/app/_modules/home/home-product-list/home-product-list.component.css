@@ -1,0 +1,15 @@
+a{
+    font-size:12px;
+    padding: 0;
+    background-color: #FFFFFF;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+.header{
+    background: #EEEEEE;
+    padding: 2rem
+}
+.header h1{
+    font-size: 3rem;
+    font-weight: 300;
+}

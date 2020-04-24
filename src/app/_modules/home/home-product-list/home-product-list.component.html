@@ -1,0 +1,16 @@
+<div class="header row d-flex justify-content-between">
+    <div class="col-md-11">
+        <h1>Products</h1>
+        <p>All the available products in our store</p>
+    </div>
+    <a class="col-md-1 btn" routerLink="/cart">
+        <i class="fa fa-cart-plus" ></i>
+        View Cart
+    </a>
+</div>
+<div class="row">
+    <div class="card-group col-lg-12 my-4">
+        <app-product class="col-lg-3" [product]="product" *ngFor='let product of productlist' ></app-product>
+        
+    </div>
+</div>

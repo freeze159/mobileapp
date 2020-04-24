@@ -1,0 +1,27 @@
+<div class="header row">
+    <div class="col-md-12">
+        <h1>Products</h1>
+    </div>
+</div>
+<div class="content row">
+    <div class="content__image col-lg-6 pt-4">
+        <img class="card-img-top" src='https://fsoft-app.herokuapp.com/{{product.image}}' alt="Card image cap">
+    </div>
+    <div class="content__info col-lg-6">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            <p class="card-text price ">Item Code: <small class="text-muted bg-warning">12315648978456</small></p>
+            <p class="card-text unit"> Manufacturer: <strong class="text-muted">{{product.manufacturer}}</strong></p>
+            <p class="card-text unit"> Category: <strong class="text-muted">{{product.category}}</strong></p>
+            <p class="card-text price">Avalaible units in stock <strong
+                    class="text-muted">{{product.unitInStock}}</strong></p>
+            <p class="card-text unit"> Price: <strong class="text-muted">{{product.unitPrice}} USD</strong></p>
+            <div class="text-white d-flex action">
+                <a class="btn btn-success" routerLink=""><i class="fa fa-info-circle"></i> Back</a>
+                <a class="btn btn-warning text-white" routerLink="/cart"><i class="fa fa-shopping-cart"></i> Order
+                    now</a>
+            </div>
+        </div>
+    </div>
+</div>
