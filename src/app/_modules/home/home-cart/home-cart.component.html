@@ -6,8 +6,8 @@
 </div>
 <div class="cart__contain row">
     <div class="action d-flex justify-content-between col-lg-12">
-        <a class="btn btn-danger">Clear cart</a>
-        <a class="btn btn-success">Check out</a>
+        <a class="btn btn-danger" (click)='clear()'>Clear cart</a>
+        <a class="btn btn-success" (click)='checkOut()'>Check out</a>
     </div>
     <div class="col-lg-12">
         <table class="table">
@@ -24,12 +24,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="4">Iphone X</td>
-                    <td>1</td>
-                    <td>1099</td>
-                    <td>1099</td>
-                    <td><a class="btn btn-danger">Remove</a></td>
+                <tr *ngFor='let item of cartItems'>
+                    <td colspan="4">{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.unitPrice}}</td>
+                    <td>{{item.unitPrice * item.quantity}}</td>
+                    <td><a class="btn btn-danger" (click)="remove(item)">Remove</a></td>
 
                 </tr>
             </tbody>

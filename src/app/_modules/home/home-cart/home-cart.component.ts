@@ -6,10 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-cart.component.css']
 })
 export class HomeCartComponent implements OnInit {
-
-  constructor() { }
+  cartItems = []
+  constructor() {
+    this.cartItems = JSON.parse(localStorage.getItem('cart'))
+  }
 
   ngOnInit(): void {
+
+  }
+  clear() {
+    localStorage.removeItem('cart')
+    this.cartItems = []
+  }
+  checkOut() {
+
+  }
+  remove(item: any) {
+    console.log(item)
+    let index = this.cartItems.findIndex(ele => ele == item)
+    let oldCart = JSON.parse(localStorage.getItem('cart'))
+    this.cartItems.splice(index,1)
+    
+    oldCart.splice(index,1)
+    localStorage.setItem('cart',JSON.stringify(oldCart))
+    
   }
 
 }

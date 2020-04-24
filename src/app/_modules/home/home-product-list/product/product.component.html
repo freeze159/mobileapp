@@ -7,7 +7,7 @@
         <p class="card-text unit"><small class="text-muted">{{product.unitInStock}} in stock</small></p>
         <div class="text-white d-flex action">
             <a class="btn btn-info" routerLink='product-detail/{{product._id}}'><i class="fa fa-info-circle" ></i> Details</a>
-            <a class="btn btn-warning" routerLink="cart"><i class="fa fa-shopping-cart"></i> Order now</a>
+            <a class="btn btn-warning" (click)='addCart()'><i class="fa fa-shopping-cart"></i> Order now</a>
         </div>
     </div>
 </div>

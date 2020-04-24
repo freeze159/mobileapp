@@ -10,11 +10,34 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
-  ngAfterViewInit(){
-    console.log(this.product)
+  addCart() {
+    let data = {
+      name: this.product.name,
+      unitPrice: this.product.unitPrice,
+      quantỉty: 1
+    }
+    if (!localStorage.getItem('cart')) {
+      let cart = []
+      cart.push(data)
+      console.log(JSON.stringify(cart))
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+    else {
+      let oldCart = JSON.parse(localStorage.getItem('cart'))
+      let index = oldCart.findIndex(ele => ele.name == data.name)
+      if (index == -1) {
+        oldCart.push(data)
+        localStorage.setItem('cart', JSON.stringify(oldCart))
+      }
+      else {
+        Object(oldCart[index]).quantỉty +=1
+        localStorage.setItem('cart', JSON.stringify(oldCart))
+      }
+      // 
+
+    }
   }
-  
 
 }
