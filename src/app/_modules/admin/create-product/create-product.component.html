@@ -1,1 +1,91 @@
-<p>create-product works!</p>
+<header class="header_add-product">
+    <div class="title_add-product">
+        <div class="_chuto">
+            Product
+        </div>
+        <div class="_chube">
+            Add products
+        </div>
+        <div class="_logout">
+            <div class="btn btn-danger " (click)="logout()">Log out</div>
+        </div>
+</div>
+</header>
+<div class="body_add-product">
+    <div class="header_form_add-product">
+        Add new product
+    </div>
+    <div class="body_form_add-product">
+
+        <form #frmAdd ="ngForm" class="form_add" (submit)="onSubmit(frmAdd.value)">
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Product Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="productName" productName='ngModel'  ngModel required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Unit Price</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control form-control-sm" id="colFormLabelSm" name="unitPrice" unitPrice='ngModel' ngModel  required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"> Unit In Stock</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control form-control-sm" id="colFormLabelSm" name="unitInStock" unitInStock='ngModel' ngModel  required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label  class="col-sm-3 col-form-label col-form-label-sm" for="exampleFormControlTextarea1">Description</label>
+                <div class="col-sm-9">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" description='ngModel' ngModel   required></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Manufacturer</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="manufacturer" manufacturer='ngModel' ngModel required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Category</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control form-control-sm" id="colFormLabelSm" name="category" category='ngModel' ngModel required>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Category</label>
+
+                <div class="col-sm-9 ">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="new" name="conditions" conditions='ngModel' ngModel>
+                        <label class="form-check-label" for="inlineRadio1">New</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="old" name="conditions" conditions='ngModel' ngModel>
+                        <label class="form-check-label" for="inlineRadio2">Old</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="refurbished" name="conditions" conditions='ngModel' ngModel>
+                        <label class="form-check-label" for="inlineRadio2">Refurbished</label>
+                      </div>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <label  class="col-sm-3 col-form-label col-form-label-sm" for="exampleFormControlTextarea1">Product Image</label>
+                <div class="col-sm-9">
+                    <input type="file"   name="product" (change)='onFileChange($event)' required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label  class="col-sm-3 col-form-label col-form-label-sm" for="exampleFormControlTextarea1"></label>
+                <div class="col-sm-9">
+                    <input  type="submit" class="btn btn-primary">
+                </div>
+            </div>
+          </form>
+   </div>
+</div>
+

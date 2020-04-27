@@ -14,26 +14,32 @@ export class ProductComponent implements OnInit {
   }
   addCart() {
     let data = {
-      name: this.product.name,
+      productName: this.product.productName,
       unitPrice: this.product.unitPrice,
-      quantỉty: 1
+      quantity: 1
     }
     if (!localStorage.getItem('cart')) {
       let cart = []
       cart.push(data)
       console.log(JSON.stringify(cart))
       localStorage.setItem('cart', JSON.stringify(cart))
+      alert('Product Added')
+
     }
     else {
       let oldCart = JSON.parse(localStorage.getItem('cart'))
-      let index = oldCart.findIndex(ele => ele.name == data.name)
+      let index = oldCart.findIndex(ele => ele.productName == data.productName)
       if (index == -1) {
         oldCart.push(data)
         localStorage.setItem('cart', JSON.stringify(oldCart))
+        alert('Product Added')
+
       }
       else {
-        Object(oldCart[index]).quantỉty +=1
+        Object(oldCart[index]).quantity += 1
         localStorage.setItem('cart', JSON.stringify(oldCart))
+        alert('Product Added')
+
       }
       // 
 

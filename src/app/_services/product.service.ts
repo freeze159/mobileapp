@@ -32,12 +32,12 @@ export class ProductService {
   }
   public CreateProduct(data:any){
     const linkApi= `https://fsoft-app.herokuapp.com/api/product`;
-    const tokenParse = JSON.parse(localStorage.getItem('token')); 
+    const tokenParse = localStorage.getItem('token'); 
     var reqHeader = new HttpHeaders({});
     // console.log(tokenParse);
       // Cho biết định dạng dữ liệu truyền đi
     // header.append('Content-Type','application/x-www-form-urlencoded')
-    const observable = this.http.post(linkApi,data,{headers:{'token':`${tokenParse}`,'Content-Type':'application/x-www-form-urlencoded;application/json'}})
+    const observable = this.http.post(linkApi,data,{headers:{'token':`${tokenParse}`}})
     return observable;
   }
   

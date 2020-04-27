@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminTemplateComponent } from './admin-template/admin-template.component'
-import { FormsModule } from '@angular/forms'
+import { FormBuilder, FormGroup,FormsModule } from '@angular/forms';
 const admin: Routes = [
   {
     path: '', component: AdminTemplateComponent, children: [

@@ -12,7 +12,7 @@ export class HomeCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log(this.cartItems)
   }
   clear() {
     localStorage.removeItem('cart')

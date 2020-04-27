@@ -1,0 +1,45 @@
+.header_add-product{
+    height: 200px;
+    background-color: rgb(238,238,238);
+    position: relative;
+    display: flex;
+}
+.title_add-product{
+    width: 90%;
+    margin: auto;
+    align-items: center;
+
+}
+.title_add-product ._chuto{
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+}
+.title_add-product ._chube{
+    font-size: 1.6rem;
+}
+._logout{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+
+.body_add-product{
+
+}
+.header_form_add-product{
+    width: 90%;
+    margin: auto;
+    font-size: 2.2rem;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    margin-bottom: 20px;
+}
+.body_form_add-product{
+    width: 90%;
+    margin: auto;
+}
+.form_add{
+    width: 500px;
+}
+/* .form_add input{
+    margin-bottom: 20px;
+} */
