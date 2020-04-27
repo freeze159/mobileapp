@@ -1,0 +1,1 @@
+App gọi request lên heroku lần đầu hơi chậm.
