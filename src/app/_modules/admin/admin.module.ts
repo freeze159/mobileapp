@@ -5,11 +5,12 @@ import { CreateProductComponent } from './create-product/create-product.componen
 import { Routes, RouterModule } from '@angular/router';
 import { AdminTemplateComponent } from './admin-template/admin-template.component'
 import { FormBuilder, FormGroup,FormsModule } from '@angular/forms';
+import { CheckadminGuard } from 'src/app/_guards/checkadmin.guard';
 const admin: Routes = [
   {
     path: '', component: AdminTemplateComponent, children: [
       { path: '', component: LoginComponent },
-      { path: 'create-product', component: CreateProductComponent }
+      { path: 'create-product', component: CreateProductComponent,canActivate:[CheckadminGuard] }
     ]
   }
 

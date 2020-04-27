@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Form, NgForm } from '@angular/forms';
 import { ProductService } from 'src/app/_services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/_services/product.service';
 })
 export class CreateProductComponent implements OnInit {
   fileData: File = null;
-  constructor(private productS: ProductService) { }
+  constructor(private productS: ProductService,private route:Router) { }
   formData: FormData
   ngOnInit(): void {
 
@@ -33,7 +34,8 @@ export class CreateProductComponent implements OnInit {
     })
   }
   logout() {
-
+    localStorage.removeItem('token');
+    this.route.navigateByUrl('/')
   }
   onFileChange(event) {
     
