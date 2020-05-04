@@ -16,7 +16,7 @@ export class CreateProductComponent implements OnInit {
 
   }
   onSubmit(data: any) {
-    
+    console.log(data)
     let formData = new FormData()
     formData.append('product', this.fileData, this.fileData.name);
     formData.append('productName',data.productName)
@@ -29,7 +29,7 @@ export class CreateProductComponent implements OnInit {
 
     
     this.productS.CreateProduct(formData).subscribe(res => {
-      console.log(res)
+      // console.log(res)
       alert('Product Created')
     })
   }
@@ -38,11 +38,10 @@ export class CreateProductComponent implements OnInit {
     this.route.navigateByUrl('/')
   }
   onFileChange(event) {
-    
+    // console.log(event)
     this.fileData = <File>event.target.files[0];
-    console.log(this.fileData)
-    // this.formData = new FormData()
-    // this.formData.set('product', this.fileData, this.fileData.name);
+    console.log(this.fileData.name)
+    
 
 
   }
