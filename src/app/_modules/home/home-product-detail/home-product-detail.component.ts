@@ -1,23 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/_services/product.service';
-
+// class Product{
+//   productName;
+//   image;
+//   description;
+//   manufacturer;
+//   category;
+//   unitInStock;
+//   unitPrice
+  
+// }
 @Component({
   selector: 'app-home-product-detail',
   templateUrl: './home-product-detail.component.html',
   styleUrls: ['./home-product-detail.component.css']
 })
+
 export class HomeProductDetailComponent implements OnInit {
 
-  constructor(private atv: ActivatedRoute, private productS: ProductService) { }
+  constructor(private atv: ActivatedRoute, private productS: ProductService) {
+   }
+  
   product: any
   quantity: number = 1
+  id:any
   ngOnInit(): void {
     this.atv.params.subscribe(res => {
-      let id = res.id
-      this.productS.GetProductById(id).subscribe(res => {
-        this.product = res
-      })
+      this.id = res.id
+    })
+    this.productS.GetProductById(this.id).subscribe((res:any) => {
+      this.product = res
     })
   }
   addCart() {

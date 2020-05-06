@@ -22,7 +22,7 @@ describe('UserService', () => {
   });
 
 
-  it('#getDesktopUserEvents should return expected value', () => {
+  it('#Login should return expected value', () => {
     const fakeData = of({"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInVzZXJUeXBlIjoiYWRtaW4iLCJ1c2VySWQiOiI1ZWExYmYwYjYyYWZiOTAyOTgxNjZjMDYiLCJpYXQiOjE1ODg1NzUwODEsImV4cCI6MTU4ODU3ODY4MX0.SGKDE92p7W9xF9zlE-CEcWhqMQgw4NOczX1HNOUD5Ws"});
     spyOn(service['http'], 'post').and.returnValue(fakeData);
     const thongtin = {

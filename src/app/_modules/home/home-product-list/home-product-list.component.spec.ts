@@ -3,6 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeProductListComponent } from './home-product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from 'src/app/_services/product.service';
+import { ProductComponent } from './product/product.component';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { of } from 'rxjs';
 
 describe('HomeProductListComponent', () => {
@@ -11,7 +14,7 @@ describe('HomeProductListComponent', () => {
   let service:ProductService
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeProductListComponent ],
+      declarations: [ HomeProductListComponent,ProductComponent ],
       imports: [
         HttpClientModule
      
@@ -19,6 +22,7 @@ describe('HomeProductListComponent', () => {
       providers:[ProductService]
     })
     .compileComponents();
+    
   }));
 
   beforeEach(() => {

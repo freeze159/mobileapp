@@ -68,6 +68,7 @@ describe('CreateProductComponent', () => {
     // Expect
     expect(thongtin.productName).toEqual(fakeReturnData.productName)
   });
+
   it('onfilechange product',()=>{
     let event = {
       target:{files:new Array(new File([""], "gaugau", {type: "text/plain", lastModified: Date.now()}))}
@@ -77,6 +78,10 @@ describe('CreateProductComponent', () => {
     component.onFileChange(event)
     //
     expect(component.fileData.name).toEqual(event.target.files[0].name)
+  })
+  it('it should logout',()=>{
+    component.logout();
+    expect(localStorage.getItem('token')).toEqual(null)
   })
 
 });

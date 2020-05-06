@@ -7,7 +7,7 @@ import { ProductService } from 'src/app/_services/product.service';
   styleUrls: ['./home-product-list.component.css']
 })
 export class HomeProductListComponent implements OnInit {
-
+  
   constructor(private productS: ProductService) { }
   productlist:any
   ngOnInit(): void {
@@ -15,6 +15,7 @@ export class HomeProductListComponent implements OnInit {
       this.productlist = res
     })
   }
-
+  
 
 }
+

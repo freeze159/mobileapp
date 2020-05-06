@@ -12,31 +12,21 @@ export class ProductService {
   constructor(private http:HttpClient){ }
   public GetProductById(id:any){
     const linkApi= `https://fsoft-app.herokuapp.com/api/product/${id}`;
-    const tokenParse = JSON.parse(localStorage.getItem('tokenbearer')); 
     var reqHeader = new HttpHeaders({});
-    // console.log(tokenParse);
-      // Cho biết định dạng dữ liệu truyền đi
-    // header.append('Content-Type','application/x-www-form-urlencoded')
+    
     const observable = this.http.get(linkApi)
     return observable;
   }
   public GetProductList(){
     const linkApi= `https://fsoft-app.herokuapp.com/api/product`;
     const tokenParse = JSON.parse(localStorage.getItem('tokenbearer')); 
-    var reqHeader = new HttpHeaders({});
-    // console.log(tokenParse);
-      // Cho biết định dạng dữ liệu truyền đi
-    // header.append('Content-Type','application/x-www-form-urlencoded')
+    
     const observable = this.http.get(linkApi)
     return observable;
   }
   public CreateProduct(data:any){
     const linkApi= `https://fsoft-app.herokuapp.com/api/product`;
-    const tokenParse = localStorage.getItem('token'); 
-    var reqHeader = new HttpHeaders({});
-    // console.log(tokenParse);
-      // Cho biết định dạng dữ liệu truyền đi
-    // header.append('Content-Type','application/x-www-form-urlencoded')
+    const tokenParse = localStorage.getItem('token');     
     const observable = this.http.post(linkApi,data,{headers:{'token':`${tokenParse}`}})
     return observable;
   }

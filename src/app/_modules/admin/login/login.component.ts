@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     this.userS.Login(credential).subscribe(res => {
       if (typeof res == 'object') {
         localStorage.setItem('token', res.token)
-        this.router.navigateByUrl('create-product')
+        this.router.navigate(['create-product'])
       }
     }, err => {
       alert(err.error.message)
